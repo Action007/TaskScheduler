@@ -19,6 +19,7 @@
 		<maven.compiler.target>24</maven.compiler.target>
 		<maven.compiler.release>24</maven.compiler.release>
 		<junit.version>5.10.0</junit.version>
+		<spotless.version>2.43.0</spotless.version>
 	</properties>
 
 	<dependencies>
@@ -72,6 +73,8 @@
 					</archive>
 				</configuration>
 			</plugin>
+
+			<!-- Spotless Plugin - Modern Java Formatter -->
 		</plugins>
 	</build>
 </project>

@@ -25,6 +25,16 @@ public final class CollectionUtils {
     return result;
   }
 
+  public static <T> Set<T> intersection(Set<T> set1, Set<T> set2) {
+    Objects.requireNonNull(set1, "set1 is required");
+    Objects.requireNonNull(set2, "set2 is required");
+
+    Set<T> result = new HashSet<>(set1);
+    result.retainAll(set2);
+
+    return result;
+  }
+
   public static <T> boolean addAllTo(Collection<? super T> target, Collection<? extends T> source) {
     Objects.requireNonNull(source, "source is required");
     Objects.requireNonNull(target, "target is required");
@@ -51,8 +61,8 @@ public final class CollectionUtils {
   }
 
   // Note: Serializable is not used — constraint is for practicing
-  public static <T extends Comparable<T> & Serializable>
-      List<T> sortedCopyWithSerializableConstraint(List<T> unsortedList) {
+  public static <T extends Comparable<T> & Serializable> List<T> sortedCopyWithSerializableConstraint(
+      List<T> unsortedList) {
     Objects.requireNonNull(unsortedList, "unsortedList is required");
 
     List<T> copy = new ArrayList<>(unsortedList);
