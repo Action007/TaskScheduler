@@ -1,5 +1,3 @@
-package main.java.com.taskmanager.service;
+package com.taskmanager.service;
 
-public class TagService {
-
-}
+public class TagService {}

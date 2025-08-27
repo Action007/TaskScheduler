@@ -1,5 +1,3 @@
-package main.java.com.taskmanager.service;
+package com.taskmanager.service;
 
-public class DeadlineScheduler {
-
-}
+public class DeadlineScheduler {}

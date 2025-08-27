@@ -1,4 +1,4 @@
-package main.java.com.taskmanager.model;
+package com.taskmanager.model;
 
 import java.time.LocalDateTime;
 import java.util.Comparator;
@@ -13,10 +13,16 @@ public class Task implements Comparable<Task> {
   private LocalDateTime deadline;
   private Status status;
   private Set<String> tags;
-  public static final Comparator<Task> BY_DEADLINE = Comparator.comparing(Task::getDeadline)
-      .thenComparing(Task::getId);
+  public static final Comparator<Task> BY_DEADLINE =
+      Comparator.comparing(Task::getDeadline).thenComparing(Task::getId);
 
-  public Task(String id, String title, Priority priority, LocalDateTime deadline, Status status, Set<String> tags) {
+  public Task(
+      String id,
+      String title,
+      Priority priority,
+      LocalDateTime deadline,
+      Status status,
+      Set<String> tags) {
     this.id = id;
     this.title = title;
     this.priority = priority;
@@ -62,22 +68,28 @@ public class Task implements Comparable<Task> {
 
   @Override
   public String toString() {
-    return "Task{" +
-        "id='" + id + '\'' +
-        ", title='" + title + '\'' +
-        ", priority=" + priority +
-        ", deadline=" + deadline +
-        ", status=" + status +
-        ", tags=" + tags +
-        '}';
+    return "Task{"
+        + "id='"
+        + id
+        + '\''
+        + ", title='"
+        + title
+        + '\''
+        + ", priority="
+        + priority
+        + ", deadline="
+        + deadline
+        + ", status="
+        + status
+        + ", tags="
+        + tags
+        + '}';
   }
 
   @Override
   public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
     Task task = (Task) o;
     return Objects.equals(id, task.id);
   }

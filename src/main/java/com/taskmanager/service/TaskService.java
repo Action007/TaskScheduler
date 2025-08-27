@@ -1,4 +1,4 @@
-package main.java.com.taskmanager.service;
+package com.taskmanager.service;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -11,8 +11,8 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-import main.java.com.taskmanager.model.Priority;
-import main.java.com.taskmanager.model.Task;
+import com.taskmanager.model.Priority;
+import com.taskmanager.model.Task;
 
 public class TaskService {
   private final Map<String, Task> taskStore = new HashMap<>();
@@ -30,10 +30,10 @@ public class TaskService {
   }
 
   public NavigableSet<Task> getUrgentTasksForTesting() {
-    return Collections.unmodifiable(urgentTasks);
+    return Collections.unmodifiableNavigableSet(urgentTasks);
   }
 
   public Set<String> getAllKnownTagsForTesting() {
-    return Collections.unmodifiable(allKnownTags);
+    return Collections.unmodifiableSet(allKnownTags);
   }
 }

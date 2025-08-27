@@ -1,10 +1,9 @@
-package main.java.com.taskmanager.util;
+package com.taskmanager.util;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
@@ -33,7 +32,8 @@ public final class CollectionUtils {
     return target.addAll(source);
   }
 
-  public static <T> void filterAndCopyTo(Collection<T> source, Predicate<T> predicate, Collection<? super T> target) {
+  public static <T> void filterAndCopyTo(
+      Collection<T> source, Predicate<T> predicate, Collection<? super T> target) {
     Objects.requireNonNull(source, "source is required");
     Objects.requireNonNull(target, "target is required");
     Objects.requireNonNull(predicate, "predicate is required");
@@ -51,8 +51,8 @@ public final class CollectionUtils {
   }
 
   // Note: Serializable is not used — constraint is for practicing
-  public static <T extends Comparable<T> & Serializable> List<T> sortedCopyWithSerializableConstraint(
-      List<T> unsortedList) {
+  public static <T extends Comparable<T> & Serializable>
+      List<T> sortedCopyWithSerializableConstraint(List<T> unsortedList) {
     Objects.requireNonNull(unsortedList, "unsortedList is required");
 
     List<T> copy = new ArrayList<>(unsortedList);
